@@ -41,7 +41,7 @@
                         <input type="text" placeholder="Cerca">
                     </div>
                     <div class="contact-container">
-                        <div class="contact-card" v-for="contact in contacts" :key="contact.name">
+                        <div class="contact-card" v-for="contact in contacts" :key="contact.name" @click="openChat(contact)">
                             <img :src="contact.avatar" :alt="contact.name">
                             <div class="contact-info">
                                 <p class="contact-name">{{ contact.name }}</p>
@@ -52,9 +52,9 @@
                 </div>
                 <div class="app-right-container">
                     <div class="app-cont-header">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="selectedContact.avatar" alt="">
                         <div class="contact-info">
-                            <p class="contact-name">Michele</p>
+                            <p class="contact-name">{{ selectedContact.name }}</p>
                             <p class="contact-last-seen">Ultimo accesso oggi alle 12:00</p>
                         </div>
                         <div class="header-icons">
@@ -63,7 +63,12 @@
                             <i class="fas fa-ellipsis-vertical"></i>
                         </div>
                     </div>
-                    <div class="message-container"></div>
+                    <div class="message-container">
+                        <div v-for="message in selectedContact.messages" :key="message.date" :class="['message', message.status]">
+                            <p>{{ message.message }}</p>
+                            <span>{{ message.date }}</span>
+                        </div>
+                    </div>
                     <div class="message-bar">
                         <i class="far fa-face-smile"></i>
                         <input type="text" placeholder="Scrivi un messaggio">

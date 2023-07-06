@@ -57,6 +57,8 @@
 .app-right-container {
     width: 65%;
     height: 100%;
+    flex-direction: column;
+    position: relative;
 }
 
 .notify-container {
@@ -85,4 +87,22 @@
     height: 80px;
     background-color: lightcoral;
     margin-bottom: 2px;
+}
+
+.message-container {
+    background-image: url('/img/mine.jpg');
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    bottom: 80px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.message-bar {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    background-color: aquamarine;
 }

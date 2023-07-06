@@ -19,6 +19,11 @@
         <div id="container-bg-top"></div>
         <div id="container-bg-bot"></div>
         <div id="app">
+            <div class="context-menu" v-show="showContextMenu && currentMessage" :style="{ top: contextMenuTop, left: contextMenuLeft }">
+                <ul>
+                  <li @click="deleteMessage">Cancella messaggio</li>
+                </ul>
+            </div>
             <div class="app-container">
                 <div class="app-left-container">
                     <div class="app-cont-header">
@@ -66,7 +71,7 @@
                         </div>
                     </div>
                     <div class="message-container">
-                        <div v-for="message in selectedContact.messages" :key="message.date" :class="['message', message.status]">
+                        <div v-for="message in selectedContact.messages" :key="message.date" :class="['message', message.status]" @contextmenu="openContextMenu(message, $event)">
                             <p>{{ message.message }}</p>
                             <span class="message-date">{{ message.date }}</span>
                         </div>

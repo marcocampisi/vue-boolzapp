@@ -177,7 +177,11 @@ createApp({
                 ],
                 }
                 ],
-                selectedContact : {}
+                selectedContact : {},
+                showContextMenu : false,
+                contextMenuTop : 0,
+                contextMenuLeft : 0,
+                currentMessage : null
         }
     },
     computed : {
@@ -220,6 +224,22 @@ createApp({
                 this.selectedContact.messages.push(newReceivedMessage);
               }, 3000);
             }
+          },
+          openContextMenu(message, e) {
+            e.preventDefault();
+            this.contextMenuTop = e.clientY + 'px';
+            this.contextMenuLeft = e.clientX + 'px';
+            this.currentMessage = message;
+            this.showContextMenu = true;
+          },
+          deleteMessage(message) {
+            if (this.currentMessage) {
+              const index = this.selectedContact.messages.indexOf(this.currentMessage);
+              if (index !== -1) {
+                this.selectedContact.messages.splice(index, 1);
+              }
+            }
+            this.showContextMenu = false;
           }
     }
 }).mount('#app');

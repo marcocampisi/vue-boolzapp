@@ -44,6 +44,7 @@
     width: 100%;
     height: 100px;
     background-color: #ececec;
+    display: flex;
 }
 
 .app-left-container {
@@ -120,5 +121,41 @@
 .message-bar > i {
     margin: auto 30px;
     font-size: 1.5em;
+    cursor: pointer;
+}
+
+.app-cont-header > img {
+    width: 60px;
+    border-radius: 50%;
+    margin: auto 20px;
+}
+
+.contact-info {
+    margin: auto 0;
+    flex-grow: 1;
+}
+
+.contact-info {
+    margin: auto 0;
+    flex-grow: 1;
+}
+
+.contact-name {
+    font-weight: bold;
+}
+
+.contact-last-seen{
+    margin-top: 5px;
+    font-weight: lighter;
+}
+
+.header-icons {
+    color: gray;
+    margin: auto 20px
+}
+
+.header-icons > i {
+    font-size: 1.5em;
+    margin: 0 10px;
     cursor: pointer;
 }

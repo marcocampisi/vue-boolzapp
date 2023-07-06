@@ -72,6 +72,16 @@
     width: 100%;
     height: 50px;
     background-color: #ececec;
+    display: flex;
+}
+
+.search-bar input {
+    width: 90%;
+    height: 75%;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
 }
 
 .contact-container {
@@ -86,8 +96,22 @@
 .contact-card {
     width: 100%;
     height: 80px;
-    background-color: lightcoral;
     margin-bottom: 2px;
+    border-bottom: 2px solid #F5F5F5;
+    border-width: 3;
+    display: flex;
+    cursor: pointer;
+}
+
+.contact-card img {
+    width: 60px;
+    border-radius: 50%;
+    margin: auto 20px;
+}
+
+.contact-last-sent {
+    margin-top: 5px;
+    font-weight: lighter;
 }
 
 .message-container {
@@ -158,4 +182,33 @@
     font-size: 1.5em;
     margin: 0 10px;
     cursor: pointer;
+}
+
+.notify-container {
+    display: flex;
+}
+
+.notify-container > i {
+    margin: auto 20px;
+    padding: 20px;
+    font-size: 1.5em;
+    line-height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    color: #99defc;
+}
+
+.notify-content {
+    margin: auto 0;
+}
+
+.notify-alert {
+    font-weight: bold;
+}
+
+.notify-enable {
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+    font-weight: lighter;
 }

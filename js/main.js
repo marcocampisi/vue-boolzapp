@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+const { DateTime } = luxon;
 
 createApp({
     data() {
@@ -196,7 +197,7 @@ createApp({
         },
         sendMessage() {
             if (this.newMessage.trim() !== '') {
-              const currentDate = '01/01/1970 00:00:00';
+              const currentDate = DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
               const newSentMessage = {
                 date: currentDate,
                 message: this.newMessage,
@@ -207,7 +208,7 @@ createApp({
         
               setTimeout(() => {
                 const newReceivedMessage = {
-                  date: '01/01/1970 00:00:00',
+                  date: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
                   message: 'Ok',
                   status: 'received'
                 };

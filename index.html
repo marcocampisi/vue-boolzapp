@@ -55,7 +55,7 @@
                         <img :src="selectedContact.avatar" alt="">
                         <div class="contact-info">
                             <p class="contact-name">{{ selectedContact.name }}</p>
-                            <p class="contact-last-seen">Ultimo accesso oggi alle 12:00</p>
+                            <p class="contact-last-seen" v-if="selectedContact.lastSeen">Ultimo accesso oggi alle {{ selectedContact.lastSeen }}</p>
                         </div>
                         <div class="header-icons">
                             <i class="fas fa-search"></i>

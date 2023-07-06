@@ -40,10 +40,10 @@
                         </div>
                     </div>
                     <div class="search-bar">
-                        <input type="text" placeholder="Cerca">
+                        <input type="text" placeholder="Cerca" v-model="searchQuery">
                     </div>
                     <div class="contact-container">
-                        <div class="contact-card" v-for="contact in contacts" :key="contact.name" @click="openChat(contact)">
+                        <div class="contact-card" v-for="contact in filteredContacts" :key="contact.name" @click="openChat(contact)">
                             <img :src="contact.avatar" :alt="contact.name">
                             <div class="contact-info">
                                 <p class="contact-name">{{ contact.name }}</p>

@@ -5,6 +5,7 @@ createApp({
     data() {
         return{
             newMessage : '',
+            searchQuery : '',
             contacts: [
                 {
                 name: 'Michele',
@@ -189,7 +190,11 @@ createApp({
                 }
                 return 'Nessun messaggio';
             }
-        }
+        },
+        filteredContacts() {
+            const query = this.searchQuery.toLowerCase();
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(query));
+          }
     },
     methods : {
         openChat(contact) {

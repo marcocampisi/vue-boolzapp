@@ -1,2 +1,40 @@
 @import "reset.css";
 @import "general.css";
+
+/* MAIN */
+
+#container-bg-top {
+    width: 100vw;
+    height: 150px;
+    background-color: #009688;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#container-bg-bot {
+    width: 100vw;
+    height: calc(100vh - 150px);
+    background-color: #D9DBD6;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.app-container {
+    width: 90%;
+    height: 95%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}

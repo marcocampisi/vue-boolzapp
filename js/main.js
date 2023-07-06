@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return{
+            newMessage : '',
             contacts: [
                 {
                 name: 'Michele',
@@ -192,6 +193,27 @@ createApp({
     methods : {
         openChat(contact) {
             this.selectedContact = contact;
-        }
+        },
+        sendMessage() {
+            if (this.newMessage.trim() !== '') {
+              const currentDate = '01/01/1970 00:00:00';
+              const newSentMessage = {
+                date: currentDate,
+                message: this.newMessage,
+                status: 'sent'
+              };
+              this.selectedContact.messages.push(newSentMessage);
+              this.newMessage = '';
+        
+              setTimeout(() => {
+                const newReceivedMessage = {
+                  date: '01/01/1970 00:00:00',
+                  message: 'Ok',
+                  status: 'received'
+                };
+                this.selectedContact.messages.push(newReceivedMessage);
+              }, 3000);
+            }
+          }
     }
 }).mount('#app');

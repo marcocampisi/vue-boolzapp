@@ -71,7 +71,7 @@
                     </div>
                     <div class="message-bar">
                         <i class="far fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keydown.enter="sendMessage">
                         <i class="fas fa-microphone"></i>
                     </div>
                 </div>

@@ -206,7 +206,7 @@ createApp({
         },
         sendMessage() {
             if (this.newMessage.trim() !== '') {
-              const currentDate = DateTime.now().toFormat('mm:ss');
+              const currentDate = DateTime.now().toFormat('hh:mm');
               const newSentMessage = {
                 date: currentDate,
                 message: this.newMessage,
@@ -217,7 +217,7 @@ createApp({
         
               setTimeout(() => {
                 const newReceivedMessage = {
-                  date: DateTime.now().toFormat('mm:ss'),
+                  date: DateTime.now().toFormat('hh:mm'),
                   message: 'Ok',
                   status: 'received'
                 };

@@ -189,8 +189,10 @@ createApp({
             return (contact) => {
                 const messages = contact.messages;
                 if (messages.length > 0) {
-                    const lastMessage = messages[messages.length - 1];
-                    return lastMessage.message;
+                  const lastMessage = messages[messages.length - 1];
+                  const lastMessageText = lastMessage.message;
+                  const lastMessageTime = lastMessage.date;
+                  return `${lastMessageText} (${lastMessageTime})`;
                 }
                 return 'Nessun messaggio';
             }

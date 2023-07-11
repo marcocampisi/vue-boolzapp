@@ -115,7 +115,7 @@
 }
 
 .message-container {
-    background-image: url('/img/mine.jpg');
+    background-image: url('../img/mine.jpg');
     width: 100%;
     position: absolute;
     top: 100px;
